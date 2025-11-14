@@ -1,0 +1,17 @@
+fastlane_version "2.219.0"
+
+platform :android do
+  lane :upload_to_open_testing do
+    supply(
+      json_key_data: ENV["GOOGLE_PLAY_JSON_KEY"],
+      package_name: "com.photonisspectra.arphospe",
+      aab: "build_output/com.photonisspectra.arphospe_3.aab",
+      track: "beta",
+      release_status: "draft",
+      skip_upload_changelogs: false,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_metadata: true
+    )
+  end
+end
