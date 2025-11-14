@@ -1,9 +1,12 @@
 name: Push new version to Open Testing
+
 on:
   workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -21,8 +24,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
-          
+      
       - name: Install Fastlane
         run: gem install fastlane
-      
-      
+
+      - name: Run Fastlane (Upload to Open Testing)
+        env:
+          GOOGLE_PLAY_JSON_KEY: ${{ secrets.GOOGLE_PLAY_JSON_KEY }}
+        run: fastlane android upload_to_open_testing
