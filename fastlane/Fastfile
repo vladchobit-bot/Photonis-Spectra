@@ -6,7 +6,7 @@ platform :android do
       json_key_data: ENV["GOOGLE_PLAY_JSON_KEY"],
       package_name: "com.photonisspectra.arphospe",
       aab: "build_output/com.photonisspectra.arphospe_3.aab",
-      track: "open",
+      track: "openTesting",
       release_status: "draft",      # загрузка как черновик
       skip_upload_changelogs: false,
       skip_upload_images: true,
