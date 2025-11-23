@@ -4,7 +4,7 @@ platform :android do
       json_key_data: ENV["GOOGLE_PLAY_JSON_KEY"], # или путь к json
       package_name: "com.photonisspectra.arphospe",
       aab: "build_output/com.photonisspectra.arphospe_3.aab",
-      track: "openTesting", # или closed, если трек существует
+      track: "beta", # или closed, если трек существует
       release_status: "draft",                 # 🚀 только draft для чернового приложения
       track_promote_release_status: "draft",   # 🚨 добавь это обязательно
       changes_not_sent_for_review: true,       # 🚨 и это тоже
