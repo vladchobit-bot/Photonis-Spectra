@@ -1,5 +1,5 @@
 platform :android do
-  lane :upload_to_internal do
+  lane :upload_to_beta do
     supply(
       json_key_data: ENV["GOOGLE_PLAY_JSON_KEY"], # или путь к json
       package_name: "com.photonisspectra.arphospe",
