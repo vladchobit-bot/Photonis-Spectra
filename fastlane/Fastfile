@@ -1,3 +1,17 @@
-fastlane supply --json_key_data "$GOOGLE_PLAY_JSON_KEY" \
-  --package_name com.photonisspectra.arphospe \
-  --track_list
+platform :android do
+  lane :upload_to_internal do
+    supply(
+      json_key_data: ENV["GOOGLE_PLAY_JSON_KEY"], # или путь к json
+      package_name: "com.photonisspectra.arphospe",
+      aab: "build_output/com.photonisspectra.arphospe_3.aab",
+      track: "open", # или closed, если трек существует
+      release_status: "draft",                 # 🚀 только draft для чернового приложения
+      track_promote_release_status: "draft",   # 🚨 добавь это обязательно
+      changes_not_sent_for_review: true,       # 🚨 и это тоже
+      skip_upload_changelogs: false,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_metadata: true
+    )
+  end
+end
