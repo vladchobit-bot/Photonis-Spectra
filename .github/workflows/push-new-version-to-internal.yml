@@ -32,8 +32,8 @@ jobs:
           GOOGLE_PLAY_JSON_KEY: ${{ secrets.GOOGLE_PLAY_JSON_KEY }}
         run: |
           export GOOGLE_PLAY_JSON_KEY="$(echo "$GOOGLE_PLAY_JSON_KEY")"
-          fastlane android upload_to_internal
+          fastlane android upload_to_beta
       - name: Run Fastlane (Upload to Open Testing)
         env:
           GOOGLE_PLAY_JSON_KEY: ${{ secrets.GOOGLE_PLAY_JSON_KEY }}
-        run: fastlane android upload_to_open_testing
+        run: fastlane android upload_to_beta
