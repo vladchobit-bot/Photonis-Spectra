@@ -1,4 +1,4 @@
-name: Push new version to Internal
+name: Push new version to open
 
 on:
   workflow_dispatch:
